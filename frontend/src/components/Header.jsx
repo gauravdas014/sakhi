@@ -39,7 +39,7 @@ function Header() {
                     Login
                   </a>
                 ) : (
-                  <NavLink to="/">
+                  <NavLink to="/dashboard">
                     <span style={{ textTransform: "Capitalize" }}>
                       {user.name.split(" ")[0]}
                     </span>
