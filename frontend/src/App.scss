@@ -1,0 +1,42 @@
+/* navbar */
+.navbar {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  min-height: 100px;
+
+  a{
+    color: #000;
+    
+  }
+
+  .logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+  }
+
+  ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    li {
+      margin-left: 24px;
+    }
+  }
+}
+
+ /* form default styles from antd */
+.login-form {
+  margin: 24px auto;
+  max-width: 300px;
+}
+.login-form-forgot {
+  float: right;
+}
+.ant-col-rtl .login-form-forgot {
+  float: left;
+}
+.login-form-button {
+  width: 100%;
+}
