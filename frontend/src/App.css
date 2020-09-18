@@ -76,4 +76,22 @@ a {
   color: #AB1D79;
   text-decoration: underline;
 }
+
+/* form default styles from antd */
+.login-form {
+  margin: 24px auto;
+  max-width: 300px;
+}
+
+.login-form-forgot {
+  float: right;
+}
+
+.ant-col-rtl .login-form-forgot {
+  float: left;
+}
+
+.login-form-button {
+  width: 100%;
+}
 /*# sourceMappingURL=App.css.map */
