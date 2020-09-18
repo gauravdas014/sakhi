@@ -1,5 +1,5 @@
 import React from 'react';
-import './App.scss';
+// import './App.scss';
 import { BrowserRouter, Switch, Route } from "react-router-dom";
 import { IndexPage } from './pages/index.jsx';
 import { AuthPage } from './pages/auth';
