@@ -1,5 +1,5 @@
-const Category = require("../models/category");
-const Product = require("../models/product");
+const Category = require("../models/categoryModel");
+const Product = require("../models/productModel");
 //const { errorHandler } = require("../helpers/dbErrorHandler");
 
 exports.categoryById = async (req, res, next, id) => {
