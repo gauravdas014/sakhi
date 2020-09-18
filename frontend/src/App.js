@@ -19,7 +19,7 @@ function App() {
           <Route path="/store" exact component={Store} />
           <Route path="/dashboard" exact component={Dashboard} />
 
-          <Route path="/product-page" exact component={ProductPage} />
+          <Route path="/product-page/:id" exact component={ProductPage} />
         </Switch>
       </BrowserRouter>
     </div>
