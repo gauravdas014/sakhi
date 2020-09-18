@@ -7,6 +7,7 @@ import UploadFile from "../components/Upload";
 import { GlobalContext } from "../Context/Global";
 import Axios from "axios";
 import { Select } from "antd";
+import useFetch from "../hooks/useFetch";
 
 const { Option, OptGroup } = Select;
 
@@ -15,7 +16,12 @@ export const Dashboard = () => {
   const [product, setProduct] = useState({});
   const [cats, setCats] = useState([]);
   const [selectedCat, setSelectedCat] = useState(cats[0]);
-
+  const [data, error, loading] = useFetch({
+    method: "get",
+    url: "/api/product",
+  });
+  console.log(data.products);
+  // setMyProds(data);
   React.useEffect(() => {
     Axios.get("/api/category")
       .then((res) => setCats(res.data))
@@ -24,11 +30,16 @@ export const Dashboard = () => {
 
   const handleAddProduct = (e) => {
     e.preventDefault();
-    Axios.post(`/api/product/${selectedCat}`, {...product,creator_user_id: user._id}).then(res=> {
-      alert("Product added Successfully");
-    }).catch(err => {
-      alert(err.message);
+    Axios.post(`/api/product/${selectedCat}`, {
+      ...product,
+      creator_user_id: user._id,
     })
+      .then((res) => {
+        alert("Product added Successfully");
+      })
+      .catch((err) => {
+        alert(err.message);
+      });
   };
 
   function handleCatChange(value) {
@@ -48,10 +59,28 @@ export const Dashboard = () => {
             <div className="products-uploaded">
               <h3 className="products-uploaded__title">मेरे उत्पाद</h3>
               <p>
-              सभी अपलोड किए गए उत्पादों को यहां सूचीबद्ध किया जाएगा। आप उस पर क्लिक करके अपने उत्पादों का प्रबंधन कर सकते हैं।
+                सभी अपलोड किए गए उत्पादों को यहां सूचीबद्ध किया जाएगा। आप उस पर
+                क्लिक करके अपने उत्पादों का प्रबंधन कर सकते हैं।
               </p>
               <div className="grid-x grid-margin-x">
-                <div className="cell large-4">
+                {!data.products && <h2>No Data</h2>}
+
+                {data.products &&
+                  data.products.map((p) => {
+                    if(p._id === user._id) {
+                      return (
+                        <div key={p._id} className="cell large-4">
+                          <Product
+                            name={p.name}
+                            cost={p.cost}
+                            image={kit}
+                            extra_class="small"
+                          />
+                        </div>
+                      )
+                    }
+                  })}
+                {/* <div className="cell large-4">
                   <Product
                     name="Embroidery kit"
                     cost="500"
@@ -66,15 +95,7 @@ export const Dashboard = () => {
                     image={kit}
                     extra_class="small"
                   />
-                </div>
-                <div className="cell large-4">
-                  <Product
-                    name="Embroidery kit"
-                    cost="500"
-                    image={kit}
-                    extra_class="small"
-                  />
-                </div>
+                </div> */}
               </div>
             </div>
           </div>
@@ -94,7 +115,7 @@ export const Dashboard = () => {
             <div className="products-uploaded">
               <h3 className="products-uploaded__title">उत्पाद अपलोड करें</h3>
               <p>
-              अधिक उत्पाद अपलोड करने के लिए, कृपया नीचे दिया गया फ़ॉर्म भरें।
+                अधिक उत्पाद अपलोड करने के लिए, कृपया नीचे दिया गया फ़ॉर्म भरें।
               </p>
 
               <form>
@@ -152,7 +173,10 @@ export const Dashboard = () => {
                       >
                         <OptGroup label="Categories">
                           {cats.map((c) => (
-                            <Option key={c._id} value={c._id}> {c.name} </Option>
+                            <Option key={c._id} value={c._id}>
+                              {" "}
+                              {c.name}{" "}
+                            </Option>
                           ))}
                         </OptGroup>
                       </Select>
@@ -160,12 +184,10 @@ export const Dashboard = () => {
                   </div>
                   <div className="cell large-6">
                     <div className="form__element-container">
-                      <label className="form__label required">
-                      फ़ोटो
-                      </label>
+                      <label className="form__label required">फ़ोटो</label>
                       <UploadFile
                         handleB64img={(img) => setProduct({ ...product, img })}
-                      /> 
+                      />
                     </div>
                   </div>
                 </div>
