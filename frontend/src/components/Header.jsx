@@ -19,14 +19,14 @@ function Header() {
             <div className="navbar">
               <ul className="navbar__item-container">
                 <NavLink
-                  to="/store"
+                  to="/"
                   className="navbar__item"
                   activeClassName="navbar__item--active"
                 >
                   Store
                 </NavLink>
                 <NavLink
-                  to="/jobs"
+                  to="/myjobs"
                   className="navbar__item"
                   activeClassName="navbar__item--active"
                 >
