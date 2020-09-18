@@ -1,38 +1,97 @@
-.App {
-  text-align: center;
+@import url("https://cdn.jsdelivr.net/gh/salil-naik/product.css/v-2.0/product.min.css");
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap");
+* {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  font-family: 'Poppins', sans-serif !important;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.grid-container {
+  max-width: 69.375em;
+  /* making it 1080px including 15px margin on either sides */
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+a {
+  color: inherit;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+h1 {
+  font-size: 50px;
+  font-weight: 600;
+}
+
+h2 {
+  font-size: 36px;
+  font-weight: 600;
+}
+
+h3 {
+  font-size: 18px;
+  font-weight: 500;
+}
+
+.text, p {
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 26px;
+  color: #6E6D7A;
+}
+
+a {
+  color: inherit;
+  text-decoration: inherit;
+  line-height: inherit;
+}
+
+.header {
+  height: 60px;
+  background-color: #FFFDF6;
+  border-bottom: 1px solid #AB1D79;
+}
+
+.navbar__item-container {
+  padding: 0;
+  margin: 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
 }
 
-.App-link {
-  color: #61dafb;
+.navbar__item {
+  line-height: 60px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.navbar__item:not(:last-child) {
+  margin-right: 30px;
 }
+
+.navbar__item--active, .navbar__item:hover {
+  color: #AB1D79;
+  text-decoration: underline;
+}
+
+/* form default styles from antd */
+.login-form {
+  margin: 24px auto;
+  max-width: 300px;
+}
+
+.login-form-forgot {
+  float: right;
+}
+
+.ant-col-rtl .login-form-forgot {
+  float: left;
+}
+
+.login-form-button {
+  width: 100%;
+}
+/*# sourceMappingURL=App.css.map */
