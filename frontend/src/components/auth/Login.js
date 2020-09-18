@@ -15,13 +15,14 @@ const Login = ({ changeTab, history }) => {
       axios
         .post("/api/auth/login", { userId, password })
         .then((res) => {
-          if (res.data.auth) {
+          if (res.data.status == "success") {
             localStorage.setItem("x-access-token", res.data.token);
+            localStorage.setItem("user", JSON.stringify(res.data.user));
             handleSuccess("Logged In Successfully.");
             setIsAuthenticated(true);
-            // history.push("/dashboard");
+            history.push("/");
           } else {
-            handleError(res.data.msg);
+            handleError(res.data.status);
           }
         })
         .catch((err) => {

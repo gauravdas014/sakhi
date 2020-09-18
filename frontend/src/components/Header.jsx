@@ -1,45 +1,53 @@
-import React, { Component } from "react";
+import React from "react";
 import { NavLink } from "react-router-dom";
+import { GlobalContext } from "../Context/Global";
 
-class Header extends Component {
-  state = {
-    current: 'mail',
-  };
-
-  handleClick = e => {
-    console.log('click ', e);
-    this.setState({ current: e.key });
-  };
-
-  render() {
-    const { current } = this.state;
-    return (
-      <header className="header">
-        <div className="grid-container">
-          <div className="grid-x grid-margin-x">
-            <div className="cell large-4">
-              <span className="header__logo">सखी</span>
-            </div>
-            <div className="cell large-8">
-              <div className="navbar">
-                <ul className="navbar__item-container">
-                  <NavLink to="/store" className="navbar__item" activeClassName="navbar__item--active">
-                    Store
-                  </NavLink>
-                  <NavLink to="/jobs" className="navbar__item" activeClassName="navbar__item--active">
-                    Jobs
-                  </NavLink>
-                  <NavLink to="/login" className="navbar__item" activeClassName="navbar__item--active">
+function Header() {
+  const { user } = React.useContext(GlobalContext);
+  return (
+    <header className="header">
+      <div className="grid-container">
+        <div className="grid-x grid-margin-x">
+          <div className="cell large-4">Logo</div>
+          <div className="cell large-8">
+            <div className="navbar">
+              <ul className="navbar__item-container">
+                <NavLink
+                  to="/store"
+                  className="navbar__item"
+                  activeClassName="navbar__item--active"
+                >
+                  Store
+                </NavLink>
+                <NavLink
+                  to="/jobs"
+                  className="navbar__item"
+                  activeClassName="navbar__item--active"
+                >
+                  Jobs
+                </NavLink>
+                {user._id === undefined ? (
+                  <a
+                    href="/auth"
+                    className="navbar__item"
+                    activeClassName="navbar__item--active"
+                  >
                     Login
+                  </a>
+                ) : (
+                  <NavLink to="/">
+                    <span style={{ textTransform: "Capitalize" }}>
+                      {user.name.split(" ")[0]}
+                    </span>
                   </NavLink>
-                </ul>
-              </div>
+                )}
+              </ul>
             </div>
           </div>
         </div>
-      </header>
-    );
-  }
+      </div>
+    </header>
+  );
 }
 
 export default Header;

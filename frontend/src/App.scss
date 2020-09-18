@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 @import url('https://cdn.jsdelivr.net/gh/salil-naik/product.css/v-2.0/product.min.css');
 // @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Mukta:wght@300;400;500;600&display=swap');
@@ -8,26 +9,37 @@
   box-sizing:border-box;
   // font-family: 'Poppins', sans-serif !important;
   font-family: 'Mukta', sans-serif;
+=======
+@import url("https://cdn.jsdelivr.net/gh/salil-naik/product.css/v-2.0/product.min.css");
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap");
+
+// settings
+* {
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif !important;
+>>>>>>> 7783a9066e480f1eb4544d4e67bfaa85ac3c3f23
 }
 
 .grid-container {
   max-width: 69.375em; /* making it 1080px including 15px margin on either sides */
 }
 
-a{color:inherit}
+a {
+  color: inherit;
+}
 
 // Theme colors
-$purple: #AB1D79;
-$lilac: #4A2343;
-$pink: #FFC7E3;
+$purple: #ab1d79;
+$lilac: #4a2343;
+$pink: #ffc7e3;
 
 // Text colors
 $title-color: #333333;
-$text-color: #6E6D7A;
+$text-color: #6e6d7a;
 
 // Background colors
-$yellow-bg: #FFFDF6;
-$pink-bg: #FFEBF3;
+$yellow-bg: #fffdf6;
+$pink-bg: #ffebf3;
 
 //font-weights
 $font-weight-regular: 400;
@@ -35,45 +47,44 @@ $font-weight-medium: 500;
 $font-weight-semi-bold: 600;
 $font-weight-bold: 700;
 
-
-//headings 
-h1{
-  font-size:50px; 
+//headings
+h1 {
+  font-size: 50px;
   font-weight: $font-weight-semi-bold;
 }
 
-h2{
-  font-size:36px; 
+h2 {
+  font-size: 36px;
   font-weight: $font-weight-semi-bold;
 }
 
-h3{
-  font-size: 18px; 
+h3 {
+  font-size: 18px;
   font-weight: $font-weight-medium;
 }
 
 // text style
-.text{
-  font-size:16px; 
+.text {
+  font-size: 16px;
   font-weight: $font-weight-regular;
-  line-height:26px;
-  color:$text-color;
+  line-height: 26px;
+  color: $text-color;
 }
 
-p{
+p {
   @extend .text; //using text style
 }
 
-a{
-  color:inherit;
-  text-decoration:inherit;
-  line-height:inherit;
+a {
+  color: inherit;
+  text-decoration: inherit;
+  line-height: inherit;
 }
 
 // header
-.header{
-  height:60px; 
-  background-color:$yellow-bg; 
+.header {
+  height: 60px;
+  background-color: $yellow-bg;
   border-bottom: 1px solid $purple;
 
   &__logo{
@@ -84,22 +95,27 @@ a{
 }
 
 // navbar
-.navbar{
-  &__item-container{
-    padding:0; margin:0;
-    display:flex; flex-direction: row; justify-content: flex-end;
+.navbar {
+  &__item-container {
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    align-items: center;
   }
 
-  &__item{
+  &__item {
     line-height: 60px;
     font-size: 18px;
 
-    &:not(:last-child){
-      margin-right:30px;
+    &:not(:last-child) {
+      margin-right: 30px;
     }
 
-    &--active, &:hover{
-      color:$purple;
+    &--active,
+    &:hover {
+      color: $purple;
       text-decoration: underline;
     }
   }

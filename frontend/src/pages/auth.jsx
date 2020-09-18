@@ -1,12 +1,12 @@
 import React from "react";
 import Auth from "../components/auth";
-import Navbar from "../components/Navbar";
+// import Navbar from "../components/Navbar";
 import { Typography } from "antd";
 
 export const AuthPage = () => {
   return (
     <>
-      <Navbar />
+      {/* <Navbar /> */}
       <Auth defaultVisible={true} showLoginButton={false} />
       <div
         style={{
