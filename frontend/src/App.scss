@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 @import url('https://cdn.jsdelivr.net/gh/salil-naik/product.css/v-2.0/product.min.css');
 // @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Mukta:wght@300;400;500;600&display=swap');
@@ -9,15 +8,6 @@
   box-sizing:border-box;
   // font-family: 'Poppins', sans-serif !important;
   font-family: 'Mukta', sans-serif;
-=======
-@import url("https://cdn.jsdelivr.net/gh/salil-naik/product.css/v-2.0/product.min.css");
-@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap");
-
-// settings
-* {
-  box-sizing: border-box;
-  font-family: "Poppins", sans-serif !important;
->>>>>>> 7783a9066e480f1eb4544d4e67bfaa85ac3c3f23
 }
 
 .grid-container {
@@ -54,7 +44,7 @@ h1 {
 }
 
 h2 {
-  font-size: 36px;
+  font-size: 30px;
   font-weight: $font-weight-semi-bold;
 }
 
@@ -134,4 +124,38 @@ a {
 }
 .login-form-button {
   width: 100%;
+}
+
+// store
+
+.product-page{
+  padding:20px 0 80px 0;
+  background: linear-gradient(#fffdf6, #ffebf3);
+}
+
+.product{
+  &__wrap{
+    background-color:#f1f1f1;
+    // border:1px solid $pink;
+    padding:20px;
+    border-radius:5px;
+    box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.2);
+    margin-top:30px;
+  }
+
+  &__image{
+    border-radius: 10px;
+    width:100%; height:250px;
+    object-fit: cover;
+    margin-bottom:20px;
+  }
+
+  &__name{
+    font-size:25px;
+    color:$title-color;
+  }
+
+  &__cost{
+    font-size:20px; 
+  }
 }
