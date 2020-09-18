@@ -26,7 +26,7 @@ In rural areas, the artisans are limited to the very bottom of the value chain. 
 
 _Tech Stacks Used:_ React for front-end, MongoDB for database, Node.js web development environment, Express.js framework.
 
-Team Details:
+Team Details:<br>
 Gaurav Das <br>
 Somya Agrawal <br>
 Shivang Meda<br>
