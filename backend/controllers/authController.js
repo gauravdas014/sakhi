@@ -37,6 +37,7 @@ exports.signup = async (req, res) => {
       password: req.body.password,
       will_sell: req.body.will_sell,
       specialized_in: req.body.specialized_in,
+      img: req.body.img
     });
     createSendToken(user, 201, req, res);
   } catch (err) {

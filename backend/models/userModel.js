@@ -26,6 +26,9 @@ const userSchema = new mongoose.Schema(
     specialized_in: {
       type: String,
     },
+    img: {
+      type: String
+    }
   },
   {
     timestamps: true,
