@@ -22,7 +22,7 @@ export default function Store() {
             {data.products && data.products.map((p) => (
               <div key={p._id} className="cell large-4 medium-6">
                 <Link to={`/product-page/${p._id}`}>
-                  <Product name="Bamboo Basket" cost="350" image={kit} />
+                  <Product name={p.name} cost={p.price} image={kit} />
                 </Link>
               </div>
             ))}

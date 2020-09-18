@@ -136,12 +136,18 @@ exports.verifyToken = (req, res) => {
   if (!token)
     return res.status(403).send({ auth: false, message: "No token provided." });
 
-  jwt.verify(token, process.env.SECRET_KEY, (err, decoded) => {
-    if (err)
-      return res
-        .status(500)
-        .send({ auth: false, message: "Failed to authenticate token." });
-    // if everything good, save to request for use in other routes
-    return res.status(200).send({ auth: true, message: "Token verified." });
+  jwt.verify(token, process.env.JWT_SECRET, (err, decoded) => {
+    try {
+      const user = User.findById(decoded.id);
+      if (err)
+        return res
+          .status(500)
+          .send({ auth: false, user, message: "Failed to authenticate token." });
+      // if everything good, save to request for use in other routes
+
+    } catch (error) {
+
+      return res.status(200).send({ auth: true, message: "Token verified." });
+    }
   });
 };
