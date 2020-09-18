@@ -32,7 +32,7 @@ const SignUp = ({ changeTab }) => {
             if (res.data.user) {
               localStorage.setItem("x-access-token", res.data.token);
               handleSuccess("Registered  Successfully.");
-              localStorage.setItem('user', JSON.stringify(res.data.user._doc));
+              localStorage.setItem('user', JSON.stringify(res.data.user));
 
               setIsAuthenticated(true);
             } else {

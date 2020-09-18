@@ -16,7 +16,7 @@ const Login = ({ changeTab, history }) => {
         .post("/api/auth/login", { userId, password })
         .then((res) => {
           if (res.data.status == "success") {
-            localStorage.setItem("x-access-token", res.data.user.token);
+            localStorage.setItem("x-access-token", res.data.token);
             localStorage.setItem("user", JSON.stringify(res.data.user));
             handleSuccess("Logged In Successfully.");
             setIsAuthenticated(true);
