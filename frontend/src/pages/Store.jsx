@@ -14,11 +14,6 @@ export default function Store() {
 
   return (
     <>
-      <div className="states">
-        <div className="grid-container full">
-          <SimpleSlider />
-        </div>
-      </div>
       <div className="product-page">
         <div className="grid-container">
           <div className="grid-x grid-margin-x">
@@ -33,6 +28,12 @@ export default function Store() {
               </div>
             ))}
           </div>
+        </div>
+      </div>
+
+      <div className="states">
+        <div className="grid-container full">
+          <SimpleSlider />
         </div>
       </div>
 

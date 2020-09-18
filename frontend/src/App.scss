@@ -375,13 +375,33 @@ a {
 // states
 .states{
   background-color:white; 
-  padding:50px;
+  padding:50px 0;
 
   &__item-container{
-    padding:0 30px;
+    padding:0 15px;
   }
   &__item{
     @extend %card;
+    padding:0;
+    overflow:hidden;
+    max-width:330px;
+  }
+
+  h3{font-size:26px;}
+
+  &__details{
+    padding:20px;
+  }
+
+  &__image{
+    height:170px;
+    object-fit:cover;
+    width:100%;
+  }
+
+  .fake-link{
+    color:#2F80ED; font-weight: 500;
+    cursor:pointer; margin-top:15px;
   }
 }
 
