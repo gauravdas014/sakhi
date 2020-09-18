@@ -8,6 +8,7 @@ exports.create = async (req, res) => {
       price: req.body.price,
       category: req.params.categoryId,
       quantity: req.body.quantity,
+      created_by: req.body.creator_user_id,
       photo: req.body.photo,
     });
     res.status(201).json({
@@ -50,4 +51,4 @@ exports.getProductById = async (req, res) => {
       message: error.message,
     });
   }
-}
+};

@@ -35,6 +35,8 @@ exports.signup = async (req, res) => {
       email: req.body.email,
       address: req.body.address,
       password: req.body.password,
+      will_sell: req.body.will_sell,
+      specialized_in: req.body.specialized_in,
     });
     createSendToken(user, 201, req, res);
   } catch (err) {
