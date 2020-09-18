@@ -6,7 +6,7 @@ router.route("/:userId").get(cartController.getAllProductsInCart);
 
 // router.route("/:userId/:productId").get(cartController.getSingleProductInCart);
 
-router.route("/:userId/productId").post(cartController.addToCart);
+router.route("/:userId/:productId").post(cartController.addToCart);
 
 // router
 //   .route("/:userId/:productId")
