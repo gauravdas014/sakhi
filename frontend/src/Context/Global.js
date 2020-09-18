@@ -13,7 +13,7 @@ export default ({ children }) => {
     // console.log("verifying token");
     axios({
       method: "get",
-      url: "/api/user/" + user.email,
+      url: "/api/auth/verifyToken",
       headers: {
         "x-access-token": tkn,
       },

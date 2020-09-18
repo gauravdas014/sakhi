@@ -2,8 +2,17 @@ import React from "react";
 import image from "../images/kitchen_utensils.jpg";
 import kit from "../images/kit.jpg";
 import Product from "../components/Product.jsx";
+import useFetch from "../hooks/useFetch";
 
-export default function ProductPage() {
+
+export default function ProductPage({match}) {
+  const [data, error, loading] = useFetch({
+    method: 'get',
+    url: `/api/product/${match.params.id}`
+  });
+
+  const {product} = data;
+  console.log(product);
   return (
     <>
       <div className="product-page w-o-heading">
@@ -15,14 +24,11 @@ export default function ProductPage() {
 
             <div className="cell large-7">
               <h1 className="product-page__name">
-                Homemage kitchen utensils and spoons
+                {product && product.name}
               </h1>
               <p>By <span className="product-page__company-name">SN small scale industry</span></p>
               <p className="product-page__desc">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolore
-                vitae cum eius dolor esse, alias neque doloremque? Asperiores
-                esse placeat harum ducimus quaerat quae distinctio. Quis
-                adipisci numquam error cum.
+                {product && product.description }
               </p>
               <button className="button__small">Add to cart</button>
             </div>

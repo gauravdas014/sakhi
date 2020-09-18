@@ -11,7 +11,7 @@ const useFetch = (config) => {
     Axios(config)
       .then((res) => {
         setLoading(false);
-        setData(res.data.reverse());
+        setData(res.data);
       })
       .catch((err) => {
         setError(err.message);

@@ -1,8 +1,16 @@
 import React from "react";
 import kit from "../images/kit.jpg";
+import useFetch from "../hooks/useFetch";
 import Product from "../components/Product.jsx";
+import { Link } from "react-router-dom";
 
 export default function Store() {
+  const [data, error, loading] = useFetch({
+    method: "get",
+    url: "/api/product",
+  });
+
+
   return (
     <>
       <div className="product-page">
@@ -11,15 +19,13 @@ export default function Store() {
             <div className="cell large-12">
               <h1>Store</h1>
             </div>
-            <div className="cell large-4 medium-6">
-              <Product name="Embroidery kit" cost="500" image={kit} />
-            </div>
-            <div className="cell large-4 medium-6">
-              <Product name="Khadi" cost="1500" image={kit} />
-            </div>
-            <div className="cell large-4 medium-6">
-              <Product name="Bamboo Basket" cost="350" image={kit} />
-            </div>
+            {data.products && data.products.map((p) => (
+              <div key={p._id} className="cell large-4 medium-6">
+                <Link to={`/product-page/${p._id}`}>
+                  <Product name="Bamboo Basket" cost="350" image={kit} />
+                </Link>
+              </div>
+            ))}
           </div>
         </div>
       </div>

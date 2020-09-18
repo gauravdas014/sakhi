@@ -10,4 +10,6 @@ router.route("/orders/by/user/:userId").get(userController.purchaseHistory);
 
 router.param("userId", userController.userById);
 
+// router.route("/sell/product").get()
+
 module.exports = router;
