@@ -33,7 +33,7 @@ class Header extends Component {
                   <NavLink to="/jobs" className="navbar__item" activeClassName="navbar__item--active">
                     Jobs
                   </NavLink>
-                  <NavLink to="/login" className="navbar__item" activeClassName="navbar__item--active">
+                  <NavLink to="/auth" className="navbar__item" activeClassName="navbar__item--active">
                     Login
                   </NavLink>
                 </ul>

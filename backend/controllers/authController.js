@@ -72,6 +72,11 @@ exports.signin = async (req, res) => {
   }
 };
 
+exports.signout = (req, res) => {
+  res.clearCookie('t');
+  res.json({ message: 'Signout success' });
+};
+
 exports.resetPassword = async (req, res) => {
   try {
     const userId = req.body.userId;

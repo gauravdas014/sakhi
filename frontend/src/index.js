@@ -3,6 +3,7 @@ import ReactDOM from "react-dom";
 import GLobalProvider from "./Context/Global";
 
 import "../node_modules/antd/dist/antd.css";
+import './App.scss';
 import App from "./App";
 
 ReactDOM.render(
