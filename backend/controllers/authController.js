@@ -22,7 +22,7 @@ exports.signup = async (req, res) => {
   }
 };
 
-exports.login = async (req, res) => {
+exports.signin = async (req, res) => {
   try {
     const userId = req.body.userId;
     const password = req.body.password;
