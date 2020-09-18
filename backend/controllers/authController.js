@@ -45,7 +45,7 @@ exports.signup = async (req, res) => {
   }
 };
 
-exports.signin = async (req, res) => {
+exports.login = async (req, res) => {
   try {
     const userId = req.body.userId;
     const password = req.body.password;
@@ -73,8 +73,8 @@ exports.signin = async (req, res) => {
 };
 
 exports.signout = (req, res) => {
-  res.clearCookie('t');
-  res.json({ message: 'Signout success' });
+  res.clearCookie("t");
+  res.json({ message: "Signout success" });
 };
 
 exports.resetPassword = async (req, res) => {
@@ -129,4 +129,19 @@ exports.setNewPassword = async (req, res) => {
       message: err,
     });
   }
+};
+
+exports.verifyToken = (req, res) => {
+  var token = req.headers["x-access-token"];
+  if (!token)
+    return res.status(403).send({ auth: false, message: "No token provided." });
+
+  jwt.verify(token, process.env.SECRET_KEY, (err, decoded) => {
+    if (err)
+      return res
+        .status(500)
+        .send({ auth: false, message: "Failed to authenticate token." });
+    // if everything good, save to request for use in other routes
+    return res.status(200).send({ auth: true, message: "Token verified." });
+  });
 };

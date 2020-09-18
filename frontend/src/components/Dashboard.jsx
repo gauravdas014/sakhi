@@ -1,9 +1,9 @@
 import React from 'react'
 
-export const IndexPage = () => {
+export const Dashboard = () => {
   return (
     <div>
-      
+      Dalsh
     </div>
   )
 }
