@@ -18,7 +18,7 @@ function App() {
           <Route path="/dashboard" exact component={Dashboard} />
           <Route path="/product-page/:id" exact component={ProductPage} />
         </Switch>
-      </BrowserRouter>
+      </BrowserRouter> 
     </div>
   );
 }
