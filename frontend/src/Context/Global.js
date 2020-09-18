@@ -5,7 +5,8 @@ export const GlobalContext = createContext();
 
 export default ({ children }) => {
   const [isAuthenticated, setIsAuthenticated] = useState(false);
-  const [user, setUser] = useState(JSON.parse(localStorage.getItem('user')) ?? { email: 'pk@gmail.com' });
+  const u = JSON.parse(localStorage.getItem('user'));
+  const [user, setUser] = useState(u ?? {});
 
   const token = localStorage.getItem("x-access-token");
   const verifyToken = (tkn) => {
