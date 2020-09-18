@@ -30,25 +30,25 @@ exports.login = async (req, res) => {
     if (reg.test(userId)) {
       const user = await User.findOne({ phone: userId });
       if (!user || !(await user.correctPassword(password, user.password))) {
-        res.send("Username or password is incorrect");
+        return res.send("Username or password is incorrect");
       }
-      res.status(200).json({
+      return res.status(200).json({
         status: "success",
         user: user,
       });
     } else {
       const user = await User.findOne({ email: userId }).select("+password");
       if (!user || !(await user.correctPassword(password, user.password))) {
-        res.send("Username or password is incorrect");
+        return res.send("Username or password is incorrect");
       }
-      res.status(200).json({
+      return res.status(200).json({
         status: "success",
         user: user,
       });
     }
   } catch (err) {
     console.error(err);
-    res.status(400).json({
+    return res.status(400).json({
       status: "fail",
       message: err,
     });
