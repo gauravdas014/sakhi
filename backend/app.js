@@ -8,6 +8,7 @@ const wishlistRouter = require("./routes/wishlistRoutes");
 const cartRouter = require("./routes/cartRoutes");
 const productRouter = require("./routes/productRoutes");
 const categoryRouter = require("./routes/categoryRoutes");
+const jobRouter = require("./routes/jobRoutes");
 
 const app = express();
 
@@ -27,5 +28,6 @@ app.use("/api/wishlist", wishlistRouter);
 app.use("/api/cart", cartRouter);
 app.use("/api/product", productRouter);
 app.use("/api/category", categoryRouter);
+app.use("/api/job", jobRouter);
 
 module.exports = app;
