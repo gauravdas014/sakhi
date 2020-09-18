@@ -20,6 +20,12 @@ const userSchema = new mongoose.Schema(
     token: {
       type: String,
     },
+    will_sell: {
+      type: Boolean,
+    },
+    specialized_in: {
+      type: String,
+    },
   },
   {
     timestamps: true,
