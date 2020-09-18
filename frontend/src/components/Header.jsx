@@ -8,7 +8,13 @@ function Header() {
     <header className="header">
       <div className="grid-container">
         <div className="grid-x grid-margin-x">
-          <div className="cell large-4">Logo</div>
+          <div className="cell large-4">
+            <NavLink to="/" exact>
+              <span className="header__logo">
+                सखी
+              </span>
+            </NavLink>
+          </div>
           <div className="cell large-8">
             <div className="navbar">
               <ul className="navbar__item-container">
@@ -35,7 +41,7 @@ function Header() {
                     Login
                   </a>
                 ) : (
-                  <NavLink to="/">
+                  <NavLink to="/dashboard">
                     <span style={{ textTransform: "Capitalize" }}>
                       {user.name.split(" ")[0]}
                     </span>

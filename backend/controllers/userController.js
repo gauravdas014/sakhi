@@ -103,6 +103,7 @@ exports.purchaseHistory = async (req, res) => {
       res.json(orders);
     });
 };
+<<<<<<< HEAD
 
 exports.purchaseHistory = async (req, res) => {
   Order.find({ user: req.profile._id })
@@ -117,3 +118,5 @@ exports.purchaseHistory = async (req, res) => {
       res.json(orders);
     });
 };
+=======
+>>>>>>> 8c43419c489c7824dc9c8e9b59253cb714fbb040
