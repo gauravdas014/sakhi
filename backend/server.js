@@ -4,11 +4,10 @@ dotenv.config({ path: "./config.env" });
 
 const app = require("./app");
 
-const DB_CLOUD = process.env.MONGODB_CLOUD_URI;
 const DB_LOCAL = process.env.MONGODB_LOCAL_URI;
 
 mongoose
-  .connect(DB_CLOUD, {
+  .connect(DB_LOCAL, {
     useNewUrlParser: true,
     useCreateIndex: true,
     useUnifiedTopology: true,
