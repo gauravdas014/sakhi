@@ -13,7 +13,7 @@ function App() {
         <Header />
         <Switch>
           <Route path="/" exact render={() => <Homepage />} />
-          <Route path="/login" exact component={AuthPage} />
+          <Route path="/auth" exact component={AuthPage} />
           <Route path="/store" exact component={Store} />
         </Switch>
       </BrowserRouter>
