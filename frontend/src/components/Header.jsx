@@ -9,9 +9,11 @@ function Header() {
       <div className="grid-container">
         <div className="grid-x grid-margin-x">
           <div className="cell large-4">
-            <span className="header__logo">
-             सखी
-            </span>
+            <NavLink to="/" exact>
+              <span className="header__logo">
+                सखी
+              </span>
+            </NavLink>
           </div>
           <div className="cell large-8">
             <div className="navbar">
