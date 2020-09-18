@@ -5,6 +5,6 @@ const jobController = require("../controllers/jobController");
 
 router.route("/:userId").get(jobController.getAllJobs);
 router.route("/:userId").post(jobController.addJob);
-router.route("/:jobId").get(jobController.getJob);
+router.route("/single/:jobId").get(jobController.getJob);
 
 module.exports = router;
