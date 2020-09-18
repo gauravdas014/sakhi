@@ -42,15 +42,13 @@ export const Dashboard = () => {
       <div className="grid-container">
         <div className="grid-x grid-margin-x">
           <div className="cell large-12">
-            <h1 style={{ marginBottom: "30px" }}>Dashboard</h1>
+            <h1 style={{ marginBottom: "30px" }}>डैशबोर्ड</h1>
           </div>
           <div className="cell large-8">
             <div className="products-uploaded">
-              <h3 className="products-uploaded__title">My products</h3>
+              <h3 className="products-uploaded__title">मेरे उत्पाद</h3>
               <p>
-                Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ipsam
-                porro consequatur recusandae. Nisi repellendus eveniet aperiam
-                illum quia deleniti dolorum.
+              सभी अपलोड किए गए उत्पादों को यहां सूचीबद्ध किया जाएगा। आप उस पर क्लिक करके अपने उत्पादों का प्रबंधन कर सकते हैं।
               </p>
               <div className="grid-x grid-margin-x">
                 <div className="cell large-4">
@@ -94,11 +92,9 @@ export const Dashboard = () => {
           </div>
           <div className="cell large-6" style={{ marginTop: "30px" }}>
             <div className="products-uploaded">
-              <h3 className="products-uploaded__title">Add products</h3>
+              <h3 className="products-uploaded__title">उत्पाद अपलोड करें</h3>
               <p>
-                Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ipsam
-                porro consequatur recusandae. Nisi repellendus eveniet aperiam
-                illum quia deleniti dolorum.
+              अधिक उत्पाद अपलोड करने के लिए, कृपया नीचे दिया गया फ़ॉर्म भरें।
               </p>
 
               <form>
@@ -106,7 +102,7 @@ export const Dashboard = () => {
                   <div className="cell large-12">
                     <Input
                       type="text"
-                      label="Product name"
+                      label="उत्पाद का नाम"
                       placeholder=""
                       onChange={(e) =>
                         setProduct({ ...product, name: e.target.value })
@@ -116,7 +112,7 @@ export const Dashboard = () => {
                   <div className="cell large-12">
                     <Input
                       type="text"
-                      label="Description"
+                      label="विवरण"
                       placeholder=""
                       onChange={(e) =>
                         setProduct({ ...product, description: e.target.value })
@@ -126,7 +122,7 @@ export const Dashboard = () => {
                   <div className="cell large-6">
                     <Input
                       type="number"
-                      label="Cost"
+                      label="क़ीमत"
                       placeholder=""
                       onChange={(e) =>
                         setProduct({ ...product, price: e.target.value })
@@ -156,7 +152,7 @@ export const Dashboard = () => {
                       >
                         <OptGroup label="Categories">
                           {cats.map((c) => (
-                            <Option value={c._id}> {c.name} </Option>
+                            <Option key={c._id} value={c._id}> {c.name} </Option>
                           ))}
                         </OptGroup>
                       </Select>
@@ -165,7 +161,7 @@ export const Dashboard = () => {
                   <div className="cell large-6">
                     <div className="form__element-container">
                       <label className="form__label required">
-                        Select Image
+                      फ़ोटो
                       </label>
                       <UploadFile
                         handleB64img={(img) => setProduct({ ...product, img })}
@@ -189,3 +185,67 @@ export const Dashboard = () => {
     </div>
   );
 };
+/*
+<div className="grid-container">
+      <div className="grid-x grid-margin-x">
+        <div className="cell large-12">
+          <h1 style={{marginBottom: '30px'}}>डैशबोर्ड </h1>
+        </div>
+        <div className="cell large-8">
+          <div className="products-uploaded">
+            <h3 className="products-uploaded__title">
+              मेरे उत्पाद
+            </h3>
+            <p>सभी अपलोड किए गए उत्पादों को यहां सूचीबद्ध किया जाएगा। आप उस पर क्लिक करके अपने उत्पादों का प्रबंधन कर सकते हैं।</p>
+            <div className="grid-x grid-margin-x">
+              <div className="cell large-4">
+                <Product name="Embroidery kit" cost="500" image={kit} extra_class="small"/>
+              </div>
+              <div className="cell large-4">
+                <Product name="Embroidery kit" cost="500" image={kit} extra_class="small"/>
+              </div>
+              <div className="cell large-4">
+                <Product name="Embroidery kit" cost="500" image={kit} extra_class="small"/>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div className="cell large-4">
+          <div className="profile-card">
+            <img src={image} alt="" className="profile-card__image"/>
+            <h3 className="profile-card__name">सपना नाइक</h3>
+            <p className="profile-card__text">संगतराश</p>
+            <p className="profile-card__text small">घर 200, ipsum dolor sit amet consectetur adipisicing elit. Goa, India</p>
+            <p className="profile-card__text"></p>
+            <p className="profile-card__text blue">8373*****73</p>
+            <div className="button__small">Edit profile</div>
+          </div>
+        </div>
+        <div className="cell large-6" style={{marginTop: '30px'}}>
+          <div className="products-uploaded">
+            <h3 className="products-uploaded__title">
+              उत्पाद अपलोड करें
+            </h3>
+            <p>अधिक उत्पाद अपलोड करने के लिए, कृपया नीचे दिया गया फ़ॉर्म भरें।</p>
+
+            <form>
+              <div className="grid-x grid-margin-x">
+                <div className="cell large-12">
+                  <Input type="text" label="उत्पाद का नाम" placeholder=""/>
+                </div>
+
+                <div className="cell large-12">
+                  <Input type="text" label="विवरण" placeholder=""/>
+                </div>
+
+                <div className="cell large-6">
+                  <Input type="text" label="क़ीमत" placeholder=""/>
+                </div>
+
+                <div className="cell large-6">
+                  <Input type="file" label="फ़ोटो" placeholder=""/>
+                </div>
+              </div>
+              <button type="submit" className="button__small" style={{marginTop: '30px'}}>अपलोड करें</button>
+            </form>
+ */
