@@ -6,6 +6,7 @@ import { AuthPage } from './pages/auth';
 import Header from "./components/Header.jsx";
 import Store from "./pages/Store.jsx";
 import { Dashboard } from './components/Dashboard';
+import ProductPage from "./pages/ProductPage.jsx";
 
 function App() {
   return (
@@ -18,6 +19,7 @@ function App() {
           <Route path="/store" exact component={Store} />
           <Route path="/dashboard" exact component={Dashboard} />
 
+          <Route path="/product-page" exact component={ProductPage} />
         </Switch>
       </BrowserRouter>
     </div>

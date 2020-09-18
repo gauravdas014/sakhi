@@ -71,6 +71,63 @@ a {
   line-height: inherit;
 }
 
+// button
+.button, a.button {
+  //elements
+  &__small {
+    padding: 8px 20px;
+  }
+
+  &__big {
+    padding: 15px 25px;
+  }
+
+  &__small,
+  &__big {
+    //purple button by default. You can use modifiers to change the colors of have different variants
+    background-color: $purple;
+    color: white;
+    border: 0;
+    display: inline;
+    text-transform: uppercase;
+    border-radius: 5px;
+    font-size: 14px;
+    font-weight: $font-weight-medium;
+    font-family: "Poppins", sans-serif;
+    cursor: pointer;
+    transition: 0.2s ease-in-out;
+
+    //modifiers
+    &--pink {
+      background-color: $pink;
+      color: $title-color;
+    }
+
+    &--hollow {
+      border: 1px solid $lilac;
+      color: $title-color;
+      background-color: transparent;
+    }
+
+    //hover effect
+    &:hover {
+      background-color: $lilac;
+      color: white;
+      transition: 0.2s ease-in-out;
+      text-decoration: none;
+    }
+  }
+}
+
+// classes to be used
+// button__small
+// button__small--pink
+// button__small--hollow
+
+// button__big
+// button__big--pink
+// button__big--hollow
+
 // header
 .header {
   height: 60px;
@@ -128,11 +185,6 @@ a {
 
 // store
 
-.product-page{
-  padding:20px 0 80px 0;
-  background: linear-gradient(#fffdf6, #ffebf3);
-}
-
 .product{
   &__wrap{
     background-color:#f1f1f1;
@@ -157,5 +209,38 @@ a {
 
   &__cost{
     font-size:20px; 
+  }
+}
+
+// product page
+
+.product-page{
+  padding:20px 0 80px 0;
+  background: linear-gradient(#fffdf6, #ffebf3);
+
+  &.w-o-heading{
+    padding:80px 0;
+  }
+
+  &__image{
+    height:300px;
+    width:100%;
+    object-fit: cover;
+    border-radius:10px;
+  }
+
+  &__name{
+    margin-bottom:10px; 
+    line-height:70px;
+  }
+
+  &__company-name{
+    color:#2F80ED;
+    cursor:pointer;
+    font-weight: $font-weight-semi-bold;
+  }
+
+  &__desc{
+    margin: 30px 0;
   }
 }
