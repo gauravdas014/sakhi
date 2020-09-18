@@ -17,12 +17,24 @@ exports.getAllProductsInCart = async (req, res) => {
 
 exports.addToCart = async (req, res) => {
   try {
-    const cart = Cart.findOne({ user: req.params.userId });
+    const cart = await Cart.findOne({ user: req.params.userId });
+    console.log(cart);
     if (cart) {
-      const updatedCart = Cart.findOne({ user: req.params.userId });
+      const updatedCart = await Cart.findOne({ user: req.params.userId });
     } else if (!cart) {
       const newCart = await Cart.create({
-        product: [{}],
+        product: [
+          {
+            product: req.params.productId,
+          },
+          {
+            productCount: req.body.productCount,
+          },
+        ],
+      });
+      res.status(200).json({
+        status: "success",
+        newCart,
       });
     }
   } catch (err) {
