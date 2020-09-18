@@ -36,3 +36,18 @@ exports.getAllProducts = async (req, res) => {
     });
   }
 };
+
+exports.getProductById = async (req, res) => {
+  try {
+    const product = await Product.findById(req.params.id);
+    res.status(200).json({
+      status: "success",
+      product,
+    });
+  } catch (error) {
+    res.status(200).json({
+      status: "success",
+      message: error.message,
+    });
+  }
+}
