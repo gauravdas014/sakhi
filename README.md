@@ -18,3 +18,17 @@ Few examples of daily chores practised by rural-women that need to find their re
 - ‘Chunar’ red clay pottery from Mirzapur, Uttar Pradesh
 
 Sounds interesting , yes it is. Today, when English is the basic requirement for using the online services, we have developed an E-commerce system which can be handled in regional languages. Our idea is to create an __regional online marketplace__. It will definitely be a step towards solving the problem of unemployment of rural women.
+
+**Problem Statement** : _Rural women unemployment_
+The rural unemployment of women in India causes children to be more susceptible to labor than education thereby reflecting negatively on the economy. How can you help solve this using technology?
+
+In rural areas, the artisans are limited to the very bottom of the value chain. Only when they can own the entire process of buying raw-materials, to creating products across a wider range and diversifying into different product categories, with the same materials and skill-sets, can they become entrepreneurs themselves and meaningful, active contributors to the economy. _Sakhi_ enables skilled women to sell directly to Indian and global consumers and earn better.
+
+_Tech Stacks Used:_ React for front-end, MongoDB for database, Node.js web development environment, Express.js framework.
+
+Team Details:
+Gaurav Das
+Somya Agrawal
+Shivang Meda
+Salil Naik
+Praveen
