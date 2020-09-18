@@ -25,7 +25,6 @@ function Header() {
                 >
                   Store
                 </NavLink>
-<<<<<<< HEAD
                 <NavLink
                   to="/myjobs"
                   className="navbar__item"
@@ -33,8 +32,6 @@ function Header() {
                 >
                   Jobs
                 </NavLink>
-=======
->>>>>>> cb1201cea84f99669a08cfc4c62dd25dbea4f463
                 {user._id === undefined ? (
                   <a
                     href="/auth"
