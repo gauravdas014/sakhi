@@ -47,6 +47,7 @@ exports.login = async (req, res) => {
       });
     }
   } catch (err) {
+    console.error(err);
     res.status(400).json({
       status: "fail",
       message: err,
