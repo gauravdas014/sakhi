@@ -20,10 +20,10 @@ app.use(express.urlencoded({ extended: true }));
 app.use(cookieParser());
 app.use(cors());
 
-app.use("/api/auth", authRouter);
-app.use("/api/user", userRouter);
-app.use("/api/wishlist", wishlistRouter);
-app.use("/api/cart", cartRouter);
-app.use("/api/seller", sellerRouter);
+// app.use("/api/auth", authRouter);
+// app.use("/api/user", userRouter);
+// app.use("/api/wishlist", wishlistRouter);
+// app.use("/api/cart", cartRouter);
+// app.use("/api/seller", sellerRouter);
 
 module.exports = app;
