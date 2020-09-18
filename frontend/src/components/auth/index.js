@@ -9,9 +9,11 @@ function callback(key) {
   // console.log(key);
 }
 
+
+
 const Auth = ({
   params,
-  defaultActiveKey = "1",
+  defaultActiveKey = "2",
   defaultVisible = false,
   showLoginButton = true,
 }) => {

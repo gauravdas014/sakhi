@@ -22,7 +22,8 @@ export default ({ children }) => {
         console.log("Auth State: ", res.data);
         if (res.data.auth) {
           setIsAuthenticated(true);
-          setUser(res.data.user);
+          console.log(res.data);
+          // setUser(res.data.user);
         } else setIsAuthenticated(false);
       })
       .catch((err) => {

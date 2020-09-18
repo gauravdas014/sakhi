@@ -1,26 +1,47 @@
-import React from "react";
+import React, { useState } from "react";
 import axios from "axios";
-import { Form, Input, Button, notification } from "antd";
+import { UploadOutlined, InboxOutlined } from '@ant-design/icons';
+import { Form, Input, Button, Switch, Upload } from "antd";
 import { UserOutlined, LockOutlined, MailOutlined, PhoneOutlined, HomeOutlined } from "@ant-design/icons";
 import { handleSuccess, handleError } from "../../utils/helpers";
 import { GlobalContext } from "../../Context/Global";
 import { useContext } from "react";
+import UploadFile from '../Upload';
 // import User from "../../pages/user";
+
+const normFile = (e) => {
+  console.log('Upload event:', e);
+
+  if (Array.isArray(e)) {
+    return e;
+  }
+
+  return e && e.fileList;
+};
 
 
 const SignUp = ({ changeTab }) => {
   const { setIsAuthenticated } = useContext(GlobalContext);
   const [form] = Form.useForm();
 
+  const [img, setImg] = useState('')
+
+  const handleImage = (img) => {
+    // console.log(form);
+    setImg(img);
+  }
   const onFinish = (data) => {
     // console.log(data); return;
-    const { name, email, password, phone, address } = data;
+    const { name, email, password, phone, address, will_sell, specialized_in } = data;
     const user = {
       name,
       email,
       password,
       phone,
-      address
+      address,
+      will_sell,
+      specialized_in,
+      img
     };
     // request backend for registration
     try {
@@ -178,6 +199,32 @@ const SignUp = ({ changeTab }) => {
           type="password"
           placeholder="Confirm Password"
         />
+      </Form.Item>
+      <Form.Item name="will_sell" label="Will sell" valuePropName="checked">
+        <Switch />
+      </Form.Item>
+
+      <Form.Item
+        name="specialized_in"
+        rules={[
+          {
+            required: false,
+            message: "Please input your speciality!",
+          },
+        ]}
+      >
+        <Input
+          placeholder="Specialize in"
+        />
+      </Form.Item>
+
+      <Form.Item
+        name="upload"
+        label="Profile Pic"
+        valuePropName="fileList"
+        getValueFromEvent={normFile}
+      >
+        <UploadFile handleB64img={handleImage} />
       </Form.Item>
 
       <Form.Item>
