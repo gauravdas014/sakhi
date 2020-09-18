@@ -19,18 +19,11 @@ function Header() {
             <div className="navbar">
               <ul className="navbar__item-container">
                 <NavLink
-                  to="/store"
+                  to="/"
                   className="navbar__item"
                   activeClassName="navbar__item--active"
                 >
                   Store
-                </NavLink>
-                <NavLink
-                  to="/jobs"
-                  className="navbar__item"
-                  activeClassName="navbar__item--active"
-                >
-                  Jobs
                 </NavLink>
                 {user._id === undefined ? (
                   <a

@@ -327,7 +327,7 @@ a {
   border-radius:5px;
   box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.2);
 }
-.profile-card{
+.profile-card, .hire-card{
   @extend %card;
 
   &__image{
@@ -369,4 +369,28 @@ a {
 
 .products-uploaded{
   @extend %card;
+}
+
+
+// states
+.states{
+  background-color:white; 
+  padding:50px;
+
+  &__item-container{
+    padding:0 30px;
+  }
+  &__item{
+    @extend %card;
+  }
+}
+
+.hire{
+  padding:80px 0;
+  background-color:$pink-bg;
+}
+
+.hire-card{
+  padding:20px;
+  margin-top:30px;
 }
