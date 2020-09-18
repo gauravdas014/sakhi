@@ -3,6 +3,7 @@ import image from "../images/kitchen_utensils.jpg";
 import kit from "../images/kit.jpg";
 import Product from "../components/Product.jsx";
 import useFetch from "../hooks/useFetch";
+import { Link } from "react-router-dom";
 
 export default function ProductPage({ match }) {
   const [data, error, loading] = useFetch({
@@ -26,7 +27,7 @@ export default function ProductPage({ match }) {
               <p>
                 By{" "}
                 <span className="product-page__company-name">
-                  {product && product.creator_user_id}
+                  <Link  to={product && `/job/${product.creator_user_id}`}>{product && product.creator_user_id}</Link>
                 </span>
               </p>
               <p className="product-page__desc">
