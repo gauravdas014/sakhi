@@ -1,10 +1,13 @@
 @import url('https://cdn.jsdelivr.net/gh/salil-naik/product.css/v-2.0/product.min.css');
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+// @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Mukta:wght@300;400;500;600&display=swap');
+
 
 // settings
 *{
   box-sizing:border-box;
-  font-family: 'Poppins', sans-serif !important;
+  // font-family: 'Poppins', sans-serif !important;
+  font-family: 'Mukta', sans-serif;
 }
 
 .grid-container {
@@ -72,6 +75,12 @@ a{
   height:60px; 
   background-color:$yellow-bg; 
   border-bottom: 1px solid $purple;
+
+  &__logo{
+    font-size:30px;
+    font-weight: $font-weight-semi-bold;
+    line-height: 60px;
+  }
 }
 
 // navbar
@@ -83,6 +92,7 @@ a{
 
   &__item{
     line-height: 60px;
+    font-size: 18px;
 
     &:not(:last-child){
       margin-right:30px;
