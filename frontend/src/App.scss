@@ -327,7 +327,7 @@ a {
   border-radius:5px;
   box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.2);
 }
-.profile-card{
+.profile-card, .hire-card{
   @extend %card;
 
   &__image{
@@ -369,4 +369,48 @@ a {
 
 .products-uploaded{
   @extend %card;
+}
+
+
+// states
+.states{
+  background-color:white; 
+  padding:50px 0;
+
+  &__item-container{
+    padding:0 15px;
+  }
+  &__item{
+    @extend %card;
+    padding:0;
+    overflow:hidden;
+    max-width:330px;
+  }
+
+  h3{font-size:26px;}
+
+  &__details{
+    padding:20px;
+  }
+
+  &__image{
+    height:170px;
+    object-fit:cover;
+    width:100%;
+  }
+
+  .fake-link{
+    color:#2F80ED; font-weight: 500;
+    cursor:pointer; margin-top:15px;
+  }
+}
+
+.hire{
+  padding:80px 0;
+  background-color:$pink-bg;
+}
+
+.hire-card{
+  padding:20px;
+  margin-top:30px;
 }

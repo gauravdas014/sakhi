@@ -3,13 +3,14 @@ import kit from "../images/kit.jpg";
 import useFetch from "../hooks/useFetch";
 import Product from "../components/Product.jsx";
 import { Link } from "react-router-dom";
+import SimpleSlider from "../components/SimpleSlider.jsx";
+import HireCard from "../components/HireCard.jsx";
 
 export default function Store() {
   const [data, error, loading] = useFetch({
     method: "get",
     url: "/api/product",
   });
-
 
   return (
     <>
@@ -28,6 +29,34 @@ export default function Store() {
             ))}
           </div>
         </div>
+      </div>
+
+      <div className="states">
+        <div className="grid-container full">
+          <SimpleSlider />
+        </div>
+      </div>
+
+      <div className="hire">
+          <div className="grid-container">
+              <div className="grid-x grid-margin-x">
+                  <div className="cell large-4">
+                      <HireCard />
+                  </div>
+                  <div className="cell large-4">
+                      <HireCard />
+                  </div>
+                  <div className="cell large-4">
+                      <HireCard />
+                  </div>
+                  <div className="cell large-4">
+                      <HireCard />
+                  </div>
+                  <div className="cell large-4">
+                      <HireCard />
+                  </div>
+              </div>
+          </div>
       </div>
     </>
   );
